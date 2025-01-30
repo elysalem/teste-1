@@ -1,0 +1,375 @@
+:root{
+    --primary: #834dfc;
+}
+*{
+    margin: 0px;
+    font-family: 'Mulish', sans-serif;
+}
+html{
+    min-height: 100%;
+}
+body.index{
+    background-color: var(--primary);
+}
+/*index.html*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 2% 1% 2%;
+    padding: 0% 1% 0% 1%;
+    height: 100px;
+}
+.header__logo{
+    width: 50%;
+}
+.header__logo img{
+    display: block;
+    margin-right: auto;
+    width: 120px;
+}
+.header__menu{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 3%;
+}
+.header__menu--not-dropdown{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.header__menu--not-dropdown img{
+    width: 40px;
+    margin: 10px;        
+}
+.header__menu--not-dropdown span{
+    margin: 10px;
+    color: white;
+    font-weight: 900;
+}
+.header__menu--dropdown ul{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 600ms, visibility 600ms;
+}
+.header__menu:hover ul, .header__menu ul:hover{
+    display: block;
+    width: 50%;
+    visibility: visible;
+    opacity: 1;
+}
+.header__menu--dropdown a{
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 900;
+}
+.header__menu--dropdown a:hover{
+    text-decoration: underline;
+}
+.searchbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.searchbox__title{
+    color: white;
+    margin: 2%;
+}
+.searchbox__input{
+    border: 1px solid white ;
+    border-radius: 5rem;
+    width: 60%;
+    background-color: #ffffff46;
+    padding: 0.6rem;
+    
+}
+.searchbox ::placeholder{
+    color: white;
+}
+.searchbox__input:focus{
+    outline: 2px solid white;
+}
+.carousel{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 35px 35px 10px 35px;
+}
+.carousel--title{
+    margin: 30px 0px 10px 0px;
+    font-size: 18px;
+    color: white; 
+}
+.carousel__container{
+    padding: 35px 0px;
+    white-space: nowrap;
+    overflow-x: scroll;
+    
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.carousel-item{
+    width: 200px;
+    height: 250px;
+    margin-right: 10px;
+    background-color: salmon;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 450ms all;
+    transform-origin: center left;
+    overflow:hidden;
+    position: relative;
+}
+.carousel-item__img{
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+.carousel-item__details{
+    font-size: 10px;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+    position: absolute;
+    top: 190px;
+    left: 0px;
+    right: 0;
+    bottom: 0px;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+.carousel-item:hover .carousel-item__details{
+    opacity: 0.95;
+}
+.carousel-item__details--img{
+    display: flex;
+    justify-content: center;
+}
+.carousel-item__details--img img{
+    width: 15px;
+    margin: 0px 20px;
+    transition: all 300ms ease-in-out;
+}
+.carousel-item__details--img img:hover{
+    transform: scale(1.28);
+}
+.carousel-item__details--title, .carousel-item__details--subtitle{
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bolder;
+    font-size: 12px;
+    text-align: center;
+}
+/*~ sirve para --> cuando se haga hover en el .carousel-item, los demás items hacen lo siguiente*/
+.carousel-item:hover ~ .carousel-item{
+    transform: translate(60px);
+}
+.carousel__container:hover .carousel-item {
+    opacity: 0.3;
+}
+.carousel__container:hover .carousel-item:hover {
+    transform: scale(1.3);
+    opacity: 1;
+}
+/*login.html*/
+body.login__body{
+    background: linear-gradient(0deg, rgba(131,77,252,1) 0%, rgba(33,192,139,1) 100%);
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    min-height: calc(100vh - 200px);
+}
+.login__container{
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    padding: 60px 68px 40px;
+    min-height: 700px;
+    width: 300px;
+}
+.login__container h2{
+    margin: 50px 0px;
+}
+.login__container--form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    caret-color: white;
+}
+.login__container--form input{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    padding: 25px 0px 10px 15px;
+    font-size: 16px;
+    color: white;
+}
+.login__container--form input::placeholder{
+    color: white;
+}
+.login__container--form input:focus{
+    outline: none;
+}
+.login__container--form button{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    margin: 15px 0px;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    letter-spacing: 1px;
+}
+.login__container--form button:hover{
+    transform: scale(1.1);
+}
+.login__container--form button:focus{
+    outline: none;
+    transform: scale(1.2);
+}
+.login__container--form label{
+    font-size: 14px;
+}
+.login__container--remember-me{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.login__container--remember-me a{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+.login__container--remember-me a:hover{
+    text-decoration: underline;
+}
+.login__container--social-media > div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin: 20px 0px;
+}
+.login__container--social-media > div img{
+    margin-right: 10px;
+    width: 30px;
+}
+.login__container--social-media a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+.login__container--social-media a:hover{
+    text-decoration: underline;
+}
+.login__container--register {
+    margin-top: 40px;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100px;
+    width: 100%;
+}
+.footer a{
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    color: white;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+/*404.html*/
+body.error__body{
+    background: linear-gradient(0deg, rgba(131,77,252,1) 0%, rgba(33,192,139,1) 100%);
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    height: 100%;
+}
+.error{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.error__container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.error__container--title{
+    color: white;
+    text-align: center;
+}
+
+.error__box--text{
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+.animated {
+    animation-duration: 6s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+  }
+@keyframes hinge {
+    0% {transform: rotate(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+    20%, 60% {transform: rotate(80deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+    40% {transform: rotate(60deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+    80% {transform: rotate(60deg) translateY(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+    100% {transform: translateY(700px);}
+  }
+.hinge{
+    animation-name: hinge;
+}
+#footer__404{
+    position: absolute;
+    /* top: auto; */
+    bottom: 0;
+} 
+/*media queris*/
+@media only screen and (max-width: 600px) {
+    .login__container {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 100%;
+    }
+    .footer{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .error__box--text{
+        margin-left: 15px;
+    }
+    .error__box--text{
+        font-size: 28px;
+    }
+}
