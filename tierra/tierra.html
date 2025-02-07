@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .contenido {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-image: url(1160.jpg);
+            max-height: 100vh;
+            padding: 10em;
+        }
+
+        .tierra {
+            width: 20em;
+            height: 20em;
+            border-radius: 50%;
+            background-size: cover;
+            background-image: url(unnamed.jpg);
+            animation: tierra 10s infinite;
+            box-shadow: 4px 4px 2px  rgb(124, 60, 23);
+
+        }
+
+        @keyframes tierra {
+            0% {
+                background-position-x: 0;
+
+            }
+
+            100% {
+                background-position-x: -800px;
+            }
+
+        }
+
+        @media(max-width:680px) {
+            .contenido{
+                max-height: 100vh;
+                
+            }
+            .tierra {
+                width: 10em;
+                height: 10em;
+                
+                
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenido">
+        <div class="tierra">
+        </div>
+    </div>
+
+</body>
+
+</html>
